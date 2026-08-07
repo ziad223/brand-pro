@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Clinic | عيادة العلامات التجارية • Brand Transformation Clinic</title>
+    <meta name="description"
+        content="براند كلينك - المنصة الإبداعية للتشخيص، العلاج، وتحويل العلامات التجارية. نساعد الشركات على بناء علامات قوية لا تُنسى.">
+    <meta name="keywords"
+        content="براند كلينك, تحويل العلامات التجارية, استراتيجية العلامة التجارية, هوية بصرية, إدارة الأزمات, فحص صحة العلامة, Brand Clinic, Brand Strategy, Brand Identity, Brand Transformation">
+    <meta name="author" content="Brand Clinic">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="google-site-verification" content="Q-IMJNP-k9tfHHBeSQvmH6YeFpd37juk5K62dmyg1es" />
+    <link rel="canonical" href="https://brandclinic-pro.com/">
+    <meta property="og:title" content="Brand Clinic | عيادة العلامات التجارية">
+    <meta property="og:description"
+        content="نشخص ونعالج ونحوّل العلامات التجارية. استشارات استراتيجية احترافية لتحويل علامتك التجارية.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brandclinic-pro.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#ff2a70">
+    <link rel="icon" href="favicon.png">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        magnific: {
+                            cream: '#f5f0ea',
+                            dark: '#0b0b0e',
+                            cardDark: '#131317',
+                            pink: '#ff2a70',
+                            accent: '#ff0055',
+                            border: '#e5decb',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --magnific-cream: #f5f0ea;
+            --magnific-pink: #ff2a70;
+            --magnific-dark: #0b0b0e;
+        }
+
+        body {
+            font-family: 'Cairo', 'Inter', system-ui, sans-serif;
+            background-color: var(--magnific-cream);
+            color: #111115;
+            overflow-x: hidden;
+        }
+
+        .english-text {
+            font-family: 'Inter', 'Cairo', sans-serif;
+        }
+
+        /* Hero Red Overlay Background */
+        .hero-red-overlay-bg {
+            position: relative;
+            background:
+                linear-gradient(180deg, rgba(160, 5, 5, 0.45) 0%, rgba(11, 11, 14, 0.88) 100%),
+                radial-gradient(ellipse at 80% 30%, rgba(255, 0, 85, 0.35) 0%, transparent 65%),
+                radial-gradient(ellipse at 20% 70%, rgba(180, 0, 0, 0.28) 0%, transparent 60%),
+                url('hero-bg.png');
+            background-size: cover;
+            background-position: center top;
+        }
+
+        /* Infinite 3D Vertical Wheel Carousel (7 Visible Slots: 3 above, 1 active in middle, 3 below) */
+        .hero-wheel-container {
+            height: 364px;
+            /* Exactly 7 slots x 52px height */
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+        }
+
+        .hero-wheel-track {
+            position: absolute;
+            top: 156px;
+            /* Center slot offset (3 x 52px) */
+            left: 0;
+            right: 0;
+            transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .magnific-hero-item {
+            height: 52px;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 1.15rem;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            white-space: nowrap;
+            user-select: none;
+        }
+
+        .magnific-hero-item.active {
+            color: #ffffff !important;
+            font-weight: 900 !important;
+            font-size: 1.45rem !important;
+            opacity: 1 !important;
+        }
+
+        .magnific-hero-item .pink-arrow {
+            display: none;
+            color: #ff2a70;
+            font-size: 1.1rem;
+        }
+
+        .magnific-hero-item.active .pink-arrow {
+            display: inline-block;
+            animation: pulseArrow 1.5s infinite alternate;
+        }
+
+        @keyframes pulseArrow {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.25);
+            }
+        }
+
+        /* Marquee Ticker */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes marquee-rtl {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 35s linear infinite;
+        }
+
+        [dir="rtl"] .animate-marquee {
+            animation-name: marquee-rtl;
+        }
+
+        /* Custom Select Dropdown Styling (Pink Chevron Arrow & Perfect Padding) */
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff2a70' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-size: 1.15rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        [dir="rtl"] select {
+            background-position: left 1.25rem center;
+            padding-left: 3rem !important;
+            padding-right: 1.25rem !important;
+        }
+
+        [dir="ltr"] select {
+            background-position: right 1.25rem center;
+            padding-right: 3rem !important;
+            padding-left: 1.25rem !important;
+        }
+
+        select option {
+            background-color: #0b0b0e;
+            color: #ffffff;
+            padding: 14px;
+            font-weight: 600;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f5f0ea;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d1c8b7;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff2a70;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f5f0ea] text-zinc-900 selection:bg-[#ff2a70] selection:text-white">
+
+    <!-- 1. TOP ANNOUNCEMENT BANNER -->
+    <div
+        class="bg-[#0b0b0e] text-white text-xs py-2.5 px-6 text-center border-b border-white/10 flex items-center justify-center gap-x-2 relative z-50">
+        <span class="text-[#ff2a70] font-bold" data-i18n="top_brand">Brand Clinic هي الآن Pro</span>
+        <span class="text-zinc-600">|</span>
+        <span class="text-zinc-300 font-medium" data-i18n="top_msg">كل المعلومات والبيانات محط اهتمام ونتعامل معها بسرية
+            تامة وأمان مطلق.</span>
+        <a href="#health-check" class="text-white hover:text-[#ff2a70] underline font-bold transition-colors"
+            data-i18n="top_link">اطلب الفحص ➔</a>
+    </div>
+
+    <!-- 2. TRANSPARENT NAVBAR -->
+    <nav class="absolute top-10 left-0 right-0 z-50 bg-transparent py-4">
+        <div class="max-w-[1650px] mx-auto px-6 lg:px-12 flex items-center justify-between">
+
+            <!-- Left: Logo -->
+            <a href="index.html" class="flex items-center gap-x-3 group">
+                <img id="nav-logo" src="logo-white.png" alt="Brand Clinic" class="h-10 w-auto object-contain">
+                <span class="text-white text-2xl font-black tracking-tight" id="nav-brand-name">Brand Clinic</span>
+            </a>
+
+            <!-- Center: Navigation Links -->
+            <div class="hidden lg:flex items-center gap-x-10 text-base font-semibold text-zinc-200">
+                <a href="#services" class="hover:text-white transition-colors" data-i18n="nav_services">الخدمات
+                    الاستراتيجية</a>
+                <a href="#playground" class="hover:text-white transition-colors" data-i18n="nav_cases">دراسات الحالة</a>
+                <a href="#health-check" class="hover:text-white transition-colors" data-i18n="nav_health">فحص الصحة</a>
+                <a href="#pricing" class="hover:text-white transition-colors" data-i18n="nav_pricing">الإنتربرايز
+                    والأزمات</a>
+                <a href="#pricing" class="hover:text-white transition-colors" data-i18n="nav_plans">الأسعار والباقات</a>
+                <a href="#faq" class="hover:text-white transition-colors" data-i18n="nav_faq">الأسئلة الشائعة</a>
+            </div>
+
+            <!-- Right: Language Switcher & Mobile Menu Button -->
+            <div class="flex items-center gap-x-4">
+                <!-- Language Switcher -->
+                <div
+                    class="flex items-center bg-zinc-900/80 backdrop-blur-md rounded-full p-1 border border-white/10 text-xs font-bold">
+                    <button onclick="switchLanguage('ar')" id="lang-ar"
+                        class="px-3.5 py-1.5 rounded-full bg-white text-black shadow transition-all">عربي</button>
+                    <button onclick="switchLanguage('en')" id="lang-en"
+                        class="px-3.5 py-1.5 rounded-full text-zinc-400 hover:text-white transition-all">EN</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()"
+                    class="lg:hidden p-2.5 rounded-full bg-zinc-900/80 text-zinc-200 border border-white/10">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- 3. HERO SECTION (Full Screen Height min-h-screen) -->
+    <section id="hero"
+        class="relative hero-red-overlay-bg text-white min-h-screen flex items-center pt-32 pb-24 lg:pt-36 lg:pb-24 overflow-hidden">
+        <div class="max-w-[1650px] mx-auto px-6 lg:px-12 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Left/Main Column: Title & CTAs (LTR left, RTL right) -->
+                <div class="lg:col-span-7 ltr:text-left rtl:text-right text-start">
+                    <!-- Pill Badge -->
+                    <div
+                        class="inline-flex items-center gap-x-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold mb-6 text-zinc-200">
+                        <span data-i18n="hero_pill_badge">المنصة الأولى لتحويل العلامات التجارية</span>
+                        <a href="#health-check" class="text-[#ff2a70] font-bold hover:underline"
+                            data-i18n="hero_pill_link">اقرأ تقرير الأداء ➔</a>
+                    </div>
+
+                    <!-- Balanced Headline Size -->
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-[1.22] tracking-tight mb-5"
+                        data-i18n="hero_title">
+                        المنصة الإبداعية لإخراج وتوجيه أفضل أعمال علامتك التجارية
+                    </h1>
+
+                    <!-- Refined Subtitle -->
+                    <p class="text-sm sm:text-base text-zinc-300 max-w-xl leading-relaxed mb-8 font-normal"
+                        data-i18n="hero_subtitle">
+                        حلول استراتيجية متكاملة للتشخيص والعلاج الهيكلي. أطر عمل ذكية تضمن نمو وتألق العلامة التجارية
+                        على كافة المستويات.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
+                        <button onclick="startHealthCheck()"
+                            class="px-7 py-3.5 rounded-full bg-white hover:bg-zinc-100 text-black font-bold text-sm transition-all hover:scale-[1.03] active:scale-[0.97] shadow-xl">
+                            <span data-i18n="btn_start_creating">ابدأ الفحص المجاني</span>
+                        </button>
+
+                        <button onclick="document.getElementById('playground').scrollIntoView({ behavior: 'smooth' })"
+                            class="px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold text-sm backdrop-blur-md transition-all flex items-center justify-center gap-x-2.5">
+                            <span class="text-[#ff2a70]">▶</span>
+                            <span data-i18n="btn_why_magnific">لماذا براند كلينك؟</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: 7-Slot Tall Infinite Vertical Wheel Carousel (3 Above + 1 Centered Active + 3 Below) -->
+                <div class="lg:col-span-5 pr-0 lg:pr-8">
+                    <div class="hero-wheel-container" id="hero-wheel-container">
+                        <div class="hero-wheel-track" id="hero-wheel-track">
+                            <!-- Injected dynamically by JS -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECTION 2 ("Created in Brand Clinic" Ultra-Professional Interactive Showcase) -->
+    <section id="playground" class="py-24 bg-[#f5f0ea] border-b border-[#e5decb]">
+        <div class="max-w-[1650px] mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-5xl font-black text-zinc-900 tracking-tight" data-i18n="sec2_title">صُنِع في
+                    براند كلينك</h2>
+                <p class="mt-3 text-zinc-600 text-base sm:text-lg" data-i18n="sec2_subtitle">من التشخيص الأول حتى التحول
+                    الشامل والإطلاق المستدام.</p>
+            </div>
+
+            <!-- Tab Pills (Magnific Filter Pills) -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+                <button onclick="filterPlayground('all')" id="tab-all"
+                    class="pg-tab px-6 py-2.5 rounded-full bg-black text-white font-bold text-sm transition-all shadow-md"
+                    data-tab="all" data-i18n="tab_all">الكل</button>
+                <button onclick="filterPlayground('identity')" id="tab-identity"
+                    class="pg-tab px-6 py-2.5 rounded-full bg-white text-zinc-700 hover:text-black font-semibold text-sm border border-[#e5decb] transition-all"
+                    data-tab="identity" data-i18n="tab_identity">ضعف الهوية</button>
+                <button onclick="filterPlayground('reputation')" id="tab-reputation"
+                    class="pg-tab px-6 py-2.5 rounded-full bg-white text-zinc-700 hover:text-black font-semibold text-sm border border-[#e5decb] transition-all"
+                    data-tab="reputation" data-i18n="tab_reputation">أزمات السمعة</button>
+                <button onclick="filterPlayground('pricing')" id="tab-pricing"
+                    class="pg-tab px-6 py-2.5 rounded-full bg-white text-zinc-700 hover:text-black font-semibold text-sm border border-[#e5decb] transition-all"
+                    data-tab="pricing" data-i18n="tab_pricing">اضطراب التسعير</button>
+                <button onclick="filterPlayground('sales')" id="tab-sales"
+                    class="pg-tab px-6 py-2.5 rounded-full bg-white text-zinc-700 hover:text-black font-semibold text-sm border border-[#e5decb] transition-all"
+                    data-tab="sales" data-i18n="tab_sales">تراجع المبيعات</button>
+            </div>
+
+            <!-- Dark Preview Sandbox Window Inside Cream Page -->
+            <div class="bg-[#0b0b0e] text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-zinc-800">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+
+                    <!-- Controls Sidebar -->
+                    <div class="lg:col-span-4 bg-zinc-900 p-6 sm:p-8 rounded-2xl border border-zinc-800 space-y-6">
+                        <div
+                            class="flex items-center justify-between text-xs font-bold text-zinc-400 border-b border-zinc-800 pb-3">
+                            <span data-i18n="pg_ctrl_head">لوحة تحكم التشخيص</span>
+                            <span class="text-[#ff2a70] animate-pulse">● LIVE</span>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-2">
+                                <span class="text-zinc-400" data-i18n="pg_slider_label">مستوى التحول الاستراتيجي</span>
+                                <span id="pg-slider-val" class="text-[#ff2a70] font-mono font-bold text-sm">95%</span>
+                            </div>
+                            <input type="range" id="pg-slider" min="10" max="100" value="95"
+                                oninput="onPlaygroundSlider(this.value)"
+                                class="w-full bg-zinc-800 h-2 rounded-lg appearance-none cursor-pointer accent-[#ff2a70]">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-400 mb-2"
+                                data-i18n="pg_strategy_label">استراتيجية التموضع المختارة</label>
+                            <div class="relative">
+                                <select onchange="onStrategyChange(this.value)"
+                                    class="w-full bg-zinc-950 border border-zinc-800 hover:border-zinc-700 rounded-xl py-3.5 text-sm text-zinc-100 font-semibold focus:outline-none focus:border-[#ff2a70] focus:ring-1 focus:ring-[#ff2a70] shadow-md transition-all">
+                                    <option value="luxury" data-i18n="pg_opt1">العلامات التجارية الفاخرة</option>
+                                    <option value="growth" data-i18n="pg_opt2">التوسع السريع في السوق</option>
+                                    <option value="crisis" data-i18n="pg_opt3">الإنقاذ واستعادة السمعة</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-zinc-800 space-y-3 text-xs">
+                            <div class="flex justify-between text-zinc-400">
+                                <span data-i18n="pg_m1">ارتفاع القيمة الإدراكية:</span>
+                                <span id="pg-metric-value"
+                                    class="text-emerald-400 font-bold font-mono text-sm">+340%</span>
+                            </div>
+                            <div class="flex justify-between text-zinc-400">
+                                <span data-i18n="pg_m2">نسبة ثقة العملاء:</span>
+                                <span id="pg-metric-trust"
+                                    class="text-[#ff2a70] font-bold font-mono text-sm">98.4%</span>
+                            </div>
+                        </div>
+
+                        <button onclick="startHealthCheck()"
+                            class="w-full py-4 rounded-full bg-white hover:bg-zinc-100 text-black font-extrabold text-sm transition-all hover:scale-[1.02] shadow-xl"
+                            data-i18n="pg_apply_btn">
+                            طبق هذا التحول على علامتك
+                        </button>
+                    </div>
+
+                    <!-- Split Interactive Display Cards -->
+                    <div class="lg:col-span-8 grid sm:grid-cols-2 gap-6">
+                        <!-- Before Card -->
+                        <div
+                            class="bg-zinc-900/90 p-7 rounded-2xl border border-zinc-800 relative overflow-hidden flex flex-col justify-between group">
+                            <div class="absolute top-0 right-0 left-0 h-1 bg-red-600"></div>
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span
+                                        class="inline-block px-3 py-1 rounded-full bg-red-950/80 text-red-400 border border-red-500/30 text-xs font-bold"
+                                        data-i18n="pg_b_tag">قبل العلاج والتحول</span>
+                                    <i class="fa-solid fa-triangle-exclamation text-red-500 text-sm"></i>
+                                </div>
+                                <h4 id="pg-b-title" class="text-xl font-bold text-white mb-3 leading-snug"
+                                    data-i18n="pg_b_t">هوية مشتتة ورسائل غامضة</h4>
+                                <p id="pg-b-desc" class="text-sm text-zinc-400 leading-relaxed mb-6" data-i18n="pg_b_d">
+                                    تراجع القيمة الإدراكية للعلامة، الاعتماد المتكرر على التخفيضات، وغياب نبرة صوت
+                                    مميزة.</p>
+                            </div>
+                            <div
+                                class="pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs text-zinc-500">
+                                <span>معدل الخطر الاستراتيجي:</span>
+                                <span class="text-red-400 font-bold font-mono">مرتفع جداً (78%)</span>
+                            </div>
+                        </div>
+
+                        <!-- After Card (High-End Transformed State) -->
+                        <div
+                            class="bg-gradient-to-br from-[#1c0810] via-zinc-900 to-[#0d0d12] p-7 rounded-2xl border border-[#ff2a70]/40 shadow-2xl relative overflow-hidden flex flex-col justify-between group">
+                            <div
+                                class="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-[#ff2a70] to-emerald-400">
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span
+                                        class="inline-block px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-500/30 text-xs font-bold"
+                                        data-i18n="pg_a_tag">بعد العلاج (براند كلينك)</span>
+                                    <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+                                </div>
+                                <h4 id="pg-a-title" class="text-xl font-bold text-white mb-3 leading-snug"
+                                    data-i18n="pg_a_t">هوية فاخرة وتموضع رائد</h4>
+                                <p id="pg-a-desc" class="text-sm text-zinc-300 leading-relaxed mb-6" data-i18n="pg_a_d">
+                                    نظام استراتيجي محكم، ثقة عميقة من العملاء، ونبرة صوت استثنائية تجذب الفئات الأكثر
+                                    ربحية.</p>
+                            </div>
+                            <div
+                                class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-zinc-400">
+                                <span>النتيجة المحققة:</span>
+                                <span class="text-emerald-400 font-bold font-mono">ريادة فاخرة (98.4%)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECTION 3 ("Made with the best brands" Marquee Banner on Cream) -->
+    <section class="py-16 bg-[#f5f0ea] border-b border-[#e5decb] overflow-hidden">
+        <div class="max-w-[1650px] mx-auto px-6 lg:px-12 mb-8 text-center">
+            <h3 class="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight" data-i18n="sec3_title">تثق بنا كبرى
+                العلامات</h3>
+            <p class="text-sm text-zinc-600 mt-1" data-i18n="sec3_subtitle">خبرات ومستشارون متخصصون عبر مختلف القطاعات
+                الصناعية والإنتاجية.</p>
+        </div>
+
+        <div class="flex whitespace-nowrap overflow-hidden">
+            <div class="animate-marquee flex items-center gap-x-6 shrink-0">
+                <div
+                    class="px-6 py-4 rounded-2xl bg-white border border-[#e5decb] shadow-sm flex items-center gap-x-3 text-sm font-bold text-zinc-800">
+                    <i class="fa-solid fa-landmark text-[#ff2a70]"></i>
+                    <span data-i18n="ind_1">الخدمات المالية والبنوك</span>
+                </div>
+                <div
+                    class="px-6 py-4 rounded-2xl bg-white border border-[#e5decb] shadow-sm flex items-center gap-x-3 text-sm font-bold text-zinc-800">
+                    <i class="fa-solid fa-cart-shopping text-[#ff2a70]"></i>
+                    <span data-i18n="ind_2">التجارة الإلكترونية والتجزئة</span>
+                </div>
+                <div
+                    class="px-6 py-4 rounded-2xl bg-white border border-[#e5decb] shadow-sm flex items-center gap-x-3 text-sm font-bold text-zinc-800">
+                    <i class="fa-solid fa-heart-pulse text-[#ff2a70]"></i>
+                    <span data-i18n="ind_3">الرعاية الصحية والعافية</span>
+                </div>
+                <div
+                    class="px-6 py-4 rounded-2xl bg-white border border-[#e5decb] shadow-sm flex items-center gap-x-3 text-sm font-bold text-zinc-800">
+                    <i class="fa-solid fa-building text-[#ff2a70]"></i>
+                    <span data-i18n="ind_4">العقارات والتطوير العمراني</span>
+                </div>
+                <div
+                    class="px-6 py-4 rounded-2xl bg-white border border-[#e5decb] shadow-sm flex items-center gap-x-3 text-sm font-bold text-zinc-800">
+                    <i class="fa-solid fa-microchip text-[#ff2a70]"></i>
+                    <span data-i18n="ind_5">التكنولوجيا والبرمجيات</span>
+                </div>
+            </div>
+            <div class="animate-marquee flex items-center gap-x-6 shrink-0" aria-hidden="true">
+                <div
+                    class="px-6 py-4 rounded-2xl bg-white border border-[#e5decb] shadow-sm flex items-center gap-x-3 text-sm font-bold text-zinc-800">
+                    <i class="fa-solid fa-landmark text-[#ff2a70]"></i>
+                    <span data-i18n="ind_1">الخدمات المالية والبنوك</span>
+                </div>
+                <div
+                    class="px-6 py-4 rounded-2xl bg-white border border-[#e5decb] shadow-sm flex items-center gap-x-3 text-sm font-bold text-zinc-800">
+                    <i class="fa-solid fa-cart-shopping text-[#ff2a70]"></i>
+                    <span data-i18n="ind_2">التجارة الإلكترونية والتجزئة</span>
+                </div>
+                <div
+                    class="px-6 py-4 rounded-2xl bg-white border border-[#e5decb] shadow-sm flex items-center gap-x-3 text-sm font-bold text-zinc-800">
+                    <i class="fa-solid fa-heart-pulse text-[#ff2a70]"></i>
+                    <span data-i18n="ind_3">الرعاية الصحية والعافية</span>
+                </div>
+                <div
+                    class="px-6 py-4 rounded-2xl bg-white border border-[#e5decb] shadow-sm flex items-center gap-x-3 text-sm font-bold text-zinc-800">
+                    <i class="fa-solid fa-building text-[#ff2a70]"></i>
+                    <span data-i18n="ind_4">العقارات والتطوير العمراني</span>
+                </div>
+                <div
+                    class="px-6 py-4 rounded-2xl bg-white border border-[#e5decb] shadow-sm flex items-center gap-x-3 text-sm font-bold text-zinc-800">
+                    <i class="fa-solid fa-microchip text-[#ff2a70]"></i>
+                    <span data-i18n="ind_5">التكنولوجيا والبرمجيات</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SECTION 4 (Bento Grid) -->
+    <section id="services" class="py-24 bg-[#f5f0ea]">
+        <div class="max-w-[1650px] mx-auto px-6 lg:px-12">
+            <div class="max-w-3xl mb-16 text-start ltr:text-left rtl:text-right">
+                <h2 class="text-3xl sm:text-5xl font-black text-zinc-900 tracking-tight" data-i18n="sec4_title">
+                    استراتيجية عظيمة.<br>نتائج مذهلة في السوق.</h2>
+                <p class="mt-4 text-zinc-600 text-base sm:text-lg" data-i18n="sec4_subtitle">حلول استراتيجية متكاملة
+                    مصممة خصيصاً لتطوير علامتك التجارية في كل مرحلة.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Service 1: Crisis -->
+                <div
+                    class="md:col-span-2 bg-[#0b0b0e] text-white p-8 sm:p-10 rounded-3xl relative overflow-hidden shadow-xl border border-zinc-800 flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-[#ff2a70]/20 text-[#ff2a70] flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-black mb-4" data-i18n="svc1_title">إدارة الأزمات وحماية
+                            السمعة</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6 max-w-xl" data-i18n="svc1_desc">
+                            نحمي ونستعيد سمعة علامتك التجارية عند ظهور التحديات المفاجئة، مع التعامل السريع والفعال مع
+                            الأزمات.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-x-2 text-xs text-[#ff2a70] font-bold">
+                        <span data-i18n="svc1_sub">استجابة فورية 24/7 للطوارئ</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
+
+                <!-- Service 2: Identity -->
+                <div
+                    class="bg-[#0b0b0e] text-white p-8 rounded-3xl shadow-xl border border-zinc-800 flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-[#ff2a70]/20 text-[#ff2a70] flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h3 class="text-2xl font-black mb-3" data-i18n="svc2_title">هوية العلامة التجارية</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6" data-i18n="svc2_desc">
+                            ننشئ أنظمة هوية بصرية ولغوية مميزة تجسد استراتيجية علامتك وتضمن التماسك عبر جميع نقاط
+                            الاتصال.
+                        </p>
+                    </div>
+                    <div class="text-xs text-white font-bold underline" data-i18n="svc_more">اعرف المزيد ➔</div>
+                </div>
+
+                <!-- Service 3: Strategy -->
+                <div
+                    class="bg-[#0b0b0e] text-white p-8 rounded-3xl shadow-xl border border-zinc-800 flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-[#ff2a70]/20 text-[#ff2a70] flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-chess-rook"></i>
+                        </div>
+                        <h3 class="text-2xl font-black mb-3" data-i18n="svc3_title">استراتيجية التموضع</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6" data-i18n="svc3_desc">
+                            نحدد الغرض الأساسي لعلامتك وموقعها التنافسي وميزتها الفريدة من خلال تخطيط استراتيجي دقيق.
+                        </p>
+                    </div>
+                    <div class="text-xs text-white font-bold underline" data-i18n="svc_more">اعرف المزيد ➔</div>
+                </div>
+
+                <!-- Service 4: Health Check -->
+                <div
+                    class="md:col-span-2 bg-[#0b0b0e] text-white p-8 sm:p-10 rounded-3xl shadow-xl border border-zinc-800 flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-[#ff2a70]/20 text-[#ff2a70] flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-black mb-4" data-i18n="svc4_title">فحص صحة العلامة التجارية
+                        </h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6 max-w-xl" data-i18n="svc4_desc">
+                            تقرير استراتيجي مفصل يستغرق 5-7 أيام عمل يحدد أسباب تراجع الأداء والفرص المتاحة للنمو.
+                        </p>
+                    </div>
+                    <button onclick="startHealthCheck()"
+                        class="self-start px-6 py-3 rounded-full bg-white text-black font-bold text-xs hover:bg-zinc-200 transition-all"
+                        data-i18n="svc4_btn">
+                        اطلب فحص الصحة لعلامتك الآن ➔
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SECTION 5 (Case Studies) -->
+    <section class="py-24 bg-[#f5f0ea] border-t border-[#e5decb]">
+        <div class="max-w-[1650px] mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-5xl font-black text-zinc-900 tracking-tight" data-i18n="sec5_title">علامتك
+                    التجارية تستحق دقتنا متناهية</h2>
+                <p class="mt-3 text-zinc-600 text-base sm:text-lg" data-i18n="sec5_subtitle">دراسات حالة وتحولات حقيقية
+                    نفذها فريق براند كلينك بنجاح.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-[#0b0b0e] text-white rounded-3xl overflow-hidden shadow-xl border border-zinc-800 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-black/80 px-3 py-1 rounded-full text-xs font-bold text-emerald-400 border border-emerald-500/30"
+                            data-i18n="c1_b">+240% نمو القيمة</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="c1_t">تحول علامة تجارية فاخرة في قطاع التجزئة</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed mb-4" data-i18n="c1_d">إعادة بناء التموضع
+                            والهوية البصرية لزيادة متوسط قيمة الطلب واستقطاب شريحة عملاء جديدة.</p>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bg-[#0b0b0e] text-white rounded-3xl overflow-hidden shadow-xl border border-zinc-800 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-black/80 px-3 py-1 rounded-full text-xs font-bold text-[#ff2a70] border border-[#ff2a70]/30"
+                            data-i18n="c2_b">98% نسبة رضا الثقة</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="c2_t">إعادة بناء سمعة مؤسسة مالية رائدة</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed mb-4" data-i18n="c2_d">احتواء أزمة سمعة حادة عبر
+                            بروتوكولات استجابة سريعة وتغيير الصورة الذهنية بالكامل.</p>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="bg-[#0b0b0e] text-white rounded-3xl overflow-hidden shadow-xl border border-zinc-800 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&auto=format&fit=crop"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-black/80 px-3 py-1 rounded-full text-xs font-bold text-emerald-400 border border-emerald-500/30"
+                            data-i18n="c3_b">+400k وصول جديد</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="c3_t">استراتيجية التموضع لشركة برمجيات SaaS</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed mb-4" data-i18n="c3_d">صياغة نبرة الصوت وهيكل
+                            الرسائل التسويقية لتحقيق التمدد السريع بالسوق الإقليمي.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. SECTION 6 (Testimonials) -->
+    <section class="py-24 bg-[#f5f0ea]">
+        <div class="max-w-[1650px] mx-auto px-6 lg:px-12">
+            <div
+                class="bg-[#0b0b0e] text-white rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden border border-zinc-800 max-w-5xl mx-auto">
+                <div class="text-xs font-bold text-[#ff2a70] uppercase tracking-widest mb-6" data-i18n="sec6_tag">أكثر
+                    مع براند كلينك</div>
+                <blockquote class="text-xl sm:text-3xl font-medium leading-relaxed mb-8 text-zinc-100"
+                    data-i18n="sec6_quote">
+                    "براند كلينك لم تغير فقط هوية شركتنا البصرية، بل غيرت طريقة رؤية السوق والعملاء لنا بالكامل. ارتفعت
+                    مبيعاتنا بنسبة 180% خلال 6 أشهر من إطلاق الاستراتيجية الجديدة."
+                </blockquote>
+                <div class="flex items-center gap-x-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-lg text-white">
+                        د</div>
+                    <div>
+                        <div class="font-bold text-white text-base" data-i18n="sec6_author">د. أحمد العلي</div>
+                        <div class="text-xs text-zinc-400" data-i18n="sec6_role">الرئيس التنفيذي - مجموعة العلي
+                            الاستثمارية</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. SECTION 7 (Dark Section - Standard) -->
+    <section id="health-check" class="py-24 bg-[#0b0b0e] text-white border-t border-zinc-800">
+        <div class="max-w-[1650px] mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <div class="lg:col-span-7">
+                    <div class="text-[#ff2a70] text-xs font-bold tracking-widest uppercase mb-3" data-i18n="sec7_tag">
+                        معيارك العالي للأعمال الإبداعية</div>
+                    <h2 class="text-3xl sm:text-5xl font-black tracking-tight mb-6" data-i18n="sec7_title">فحص صحة
+                        العلامة التجارية</h2>
+                    <p class="text-zinc-300 text-base sm:text-lg leading-relaxed mb-8" data-i18n="sec7_subtitle">
+                        هل تعمل علامتك التجارية بكامل إمكاناتها؟ فحص صحة العلامة منحك رؤية دقيقة وعميقة عن حالتها
+                        الحالية ويحدد بدقة أسباب تراجع الأداء.
+                    </p>
+
+                    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 mb-8 space-y-3">
+                        <div class="flex items-center gap-x-3 text-sm text-zinc-300"><i
+                                class="fa-solid fa-check text-[#ff2a70]"></i> <span data-i18n="sec7_c1">اكتشاف شامل
+                                وتحليل للوضع الحالي</span></div>
+                        <div class="flex items-center gap-x-3 text-sm text-zinc-300"><i
+                                class="fa-solid fa-check text-[#ff2a70]"></i> <span data-i18n="sec7_c2">تحليل تنافسي
+                                معمق بالسوق</span></div>
+                        <div class="flex items-center gap-x-3 text-sm text-zinc-300"><i
+                                class="fa-solid fa-check text-[#ff2a70]"></i> <span data-i18n="sec7_c3">تقرير تشخيصي
+                                مفصل خلال 5-7 أيام</span></div>
+                    </div>
+
+                    <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-xl text-xs text-red-300 mb-8"
+                        data-i18n="sec7_notice">
+                        الاستشارة مأجورة. يتم تحديد موعد الاستشارة حسب رغبتكم (هاتفياً، مكالمة فيديو، أو حضور شخصي في
+                        مقر عملكم أو لدينا بالوكالة).
+                    </div>
+
+                    <button onclick="startHealthCheck()"
+                        class="px-8 py-4 rounded-full bg-white text-black font-bold text-base hover:bg-zinc-200 transition-all"
+                        data-i18n="sec7_btn">
+                        اطلب فحص العلامة التجارية الآن ➔
+                    </button>
+                </div>
+
+                <div class="lg:col-span-5 bg-zinc-900 p-8 rounded-3xl border border-zinc-800 text-center">
+                    <div class="text-xs text-zinc-400 font-bold uppercase mb-2" data-i18n="sec7_stat_lbl">مدة التقرير
+                        التنفيذي</div>
+                    <div class="text-6xl font-black font-mono text-white mb-2">5 - 7</div>
+                    <div class="text-base font-bold text-[#ff2a70] mb-6" data-i18n="sec7_stat_unit">أيام عمل رسمية</div>
+                    <div class="pt-6 border-t border-zinc-800 space-y-3 text-xs text-zinc-300">
+                        <div class="flex justify-between"><span data-i18n="sec7_s1">سرية البيانات:</span><span
+                                class="font-bold text-white" data-i18n="sec7_s1_v">حماية مطلقة NDA</span></div>
+                        <div class="flex justify-between"><span data-i18n="sec7_s2">التأثير المتوقع:</span><span
+                                class="font-bold text-emerald-400" data-i18n="sec7_s2_v">فوري وقابل للقياس</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. SECTION 8 (Pricing) -->
+    <section id="pricing" class="py-24 bg-[#f5f0ea] border-t border-[#e5decb]">
+        <div class="max-w-[1650px] mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-5xl font-black text-zinc-900 tracking-tight" data-i18n="sec8_title">اختر
+                    الباقة المناسبة لعلامتك</h2>
+                <p class="mt-3 text-zinc-600 text-base sm:text-lg" data-i18n="sec8_subtitle">خطط استثمارية واضحة ومحددة
+                    تناسب مختلف مراحل نمو علامتك.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+
+                <!-- Plan 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-[#e5decb] shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-2" data-i18n="p1_tag">
+                            التشخيص الفوري</div>
+                        <h3 class="text-2xl font-black text-zinc-900 mb-4" data-i18n="p1_t">التشخيص الاستراتيجي</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-black text-zinc-900 font-mono">$499</span>
+                            <span class="text-xs text-zinc-500" data-i18n="p1_u">/ تقرير كامل</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-zinc-700 mb-8">
+                            <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-[#ff2a70]"></i> <span
+                                    data-i18n="p1_f1">فحص صحة العلامة خلال 5 أيام</span></li>
+                            <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-[#ff2a70]"></i> <span
+                                    data-i18n="p1_f2">تحليل تنافسي لـ 3 منافسين</span></li>
+                            <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-[#ff2a70]"></i> <span
+                                    data-i18n="p1_f3">جلسة عرض ومناقشة ساعة عبر زوم</span></li>
+                        </ul>
+                    </div>
+                    <button onclick="openFormModal('طلب باقة التشخيص الاستراتيجي ($499)')"
+                        class="w-full py-3.5 rounded-full bg-zinc-900 text-white font-bold text-sm hover:bg-black transition-all"
+                        data-i18n="p1_btn">
+                        احجز هذه الباقة ➔
+                    </button>
+                </div>
+
+                <!-- Plan 2 (Featured Dark Card) -->
+                <div
+                    class="bg-[#0b0b0e] text-white p-8 rounded-3xl shadow-2xl border-2 border-[#ff2a70] relative flex flex-col justify-between">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#ff2a70] text-white font-bold text-xs shadow-md"
+                        data-i18n="p2_badge">
+                        ⭐ الأكثر طلباً
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-[#ff2a70] uppercase tracking-widest mb-2 mt-2"
+                            data-i18n="p2_tag">التحول الكامل</div>
+                        <h3 class="text-2xl font-black text-white mb-4" data-i18n="p2_t">باقة التحويل الشامل</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-black text-white font-mono">$1,499</span>
+                            <span class="text-xs text-zinc-400" data-i18n="p2_u">/ مشروع متكامل</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-zinc-300 mb-8">
+                            <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-[#ff2a70]"></i> <span
+                                    data-i18n="p2_f1">تشخيص + إعادة تموضع استراتيجي</span></li>
+                            <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-[#ff2a70]"></i> <span
+                                    data-i18n="p2_f2">كتالوج الهوية البصرية واللفظية</span></li>
+                            <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-[#ff2a70]"></i> <span
+                                    data-i18n="p2_f3">استراتيجية النبرة والرسائل التسويقية</span></li>
+                            <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-[#ff2a70]"></i> <span
+                                    data-i18n="p2_f4">متابعة تنفيذية لمدة 30 يوماً</span></li>
+                        </ul>
+                    </div>
+                    <button onclick="openFormModal('طلب باقة التحويل الشامل ($1499)')"
+                        class="w-full py-4 rounded-full bg-white text-black font-bold text-sm hover:bg-zinc-100 transition-all shadow-md"
+                        data-i18n="p2_btn">
+                        احجز باقة التحويل الشامل ➔
+                    </button>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-[#e5decb] shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-2" data-i18n="p3_tag">
+                            للمؤسسات والأزمات</div>
+                        <h3 class="text-2xl font-black text-zinc-900 mb-4" data-i18n="p3_t">الإنتربرايز والأزمات</h3>
+                        <div class="mb-6">
+                            <span class="text-3xl font-black text-zinc-900" data-i18n="p3_p">حسب الطلب</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-zinc-700 mb-8">
+                            <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-[#ff2a70]"></i> <span
+                                    data-i18n="p3_f1">إدارة طوارئ الأزمات والسمعة 24/7</span></li>
+                            <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-[#ff2a70]"></i> <span
+                                    data-i18n="p3_f2">تدريب الإدارة العليا والتنفيذيين</span></li>
+                            <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-[#ff2a70]"></i> <span
+                                    data-i18n="p3_f3">اتفاقية عدم إفصاح NDA سرية</span></li>
+                        </ul>
+                    </div>
+                    <button onclick="openFormModal('طلب باقة الإنتربرايز')"
+                        class="w-full py-3.5 rounded-full bg-zinc-900 text-white font-bold text-sm hover:bg-black transition-all"
+                        data-i18n="p3_btn">
+                        تواصل لمعرفة التفاصيل ➔
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. SECTION 9 (FAQ Accordion) -->
+    <section id="faq" class="py-24 bg-[#f5f0ea]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-5xl font-black text-zinc-900 tracking-tight" data-i18n="sec9_title">الأسئلة
+                    الشائعة</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white rounded-2xl border border-[#e5decb] overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                        class="w-full p-6 text-start ltr:text-left rtl:text-right font-bold text-lg text-zinc-900 flex justify-between items-center">
+                        <span data-i18n="faq_q1">كيف تعقد الجلسات والاستشارات مع براند كلينك؟</span>
+                        <i class="fa-solid fa-plus text-[#ff2a70]"></i>
+                    </button>
+                    <div class="faq-ans hidden p-6 pt-0 text-sm text-zinc-600 leading-relaxed border-t border-zinc-100"
+                        data-i18n="faq_a1">
+                        الاستشارات مأجورة ويتم تحديد موعدها حسب رغبتكم: هاتفياً، مكالمة فيديو، أو حضور شخصي بمقر عملكم
+                        أو الوكالة.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-[#e5decb] overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                        class="w-full p-6 text-start ltr:text-left rtl:text-right font-bold text-lg text-zinc-900 flex justify-between items-center">
+                        <span data-i18n="faq_q2">كيف تضمن براند كلينك سرية بيانات شركتنا؟</span>
+                        <i class="fa-solid fa-plus text-[#ff2a70]"></i>
+                    </button>
+                    <div class="faq-ans hidden p-6 pt-0 text-sm text-zinc-600 leading-relaxed border-t border-zinc-100"
+                        data-i18n="faq_a2">
+                        كل المعلومات والبيانات المقدمة هي محط اهتمام مطلق ونتعامل معها بسرية تامة وتوقيع اتفاقية NDA.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. SECTION 10 (Bottom CTA) -->
+    <section class="py-24 bg-[#0b0b0e] text-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl sm:text-6xl font-black tracking-tight mb-6" data-i18n="sec10_title">ابدأ مع براند كلينك
+            </h2>
+            <p class="text-lg text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="sec10_subtitle">
+                دعنا نبدأ رحلة التحول معاً. احجز استشارة مأجورة مع أحد خبرائنا اليوم.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onclick="openWhatsApp()"
+                    class="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-xl transition-all flex items-center justify-center gap-x-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span data-i18n="sec10_b1">تواصل عبر واتساب</span>
+                </button>
+
+                <button onclick="openFormModal('طلب فحص واجتماع من القاع')"
+                    class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-bold text-base hover:bg-zinc-200 transition-all">
+                    <span data-i18n="sec10_b2">طلب فحص واجتماع استشاري ➔</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. FOOTER -->
+    <footer class="bg-[#0b0b0e] text-zinc-400 pt-16 pb-12 border-t border-zinc-900 text-sm">
+        <div class="max-w-[1650px] mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-zinc-900">
+
+                <div class="md:col-span-5">
+                    <a href="index.html" class="flex items-center gap-x-3 mb-6">
+                        <img id="footer-logo" src="logo-white.png" alt="Brand Clinic" class="h-9 w-auto">
+                        <span class="text-white font-black text-2xl tracking-tight">Brand Clinic</span>
+                    </a>
+                    <p class="text-zinc-400 leading-relaxed mb-6 max-w-sm" data-i18n="ft_about">
+                        نساعد العلامات التجارية على الشفاء، النمو، والازدهار. استشارات استراتيجية احترافية تحول العلامات
+                        إلى قوى لا تُنسى.
+                    </p>
+                    <div class="flex items-center gap-x-4">
+                        <a href="https://linkedin.com/company/brandclinic" target="_blank"
+                            class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:text-white transition-all"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com/brandclinic" target="_blank"
+                            class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:text-white transition-all"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <button onclick="openWhatsApp()"
+                            class="flex items-center gap-x-2 px-4 py-2 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-400 font-bold text-xs">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>واتساب</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs" data-i18n="ft_col1">الشركة</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li><a href="#hero" class="hover:text-white transition-colors" data-i18n="nav_home">الرئيسية</a>
+                        </li>
+                        <li><a href="#services" class="hover:text-white transition-colors"
+                                data-i18n="nav_services">الخدمات الاستراتيجية</a></li>
+                        <li><a href="#process" class="hover:text-white transition-colors" data-i18n="nav_cases">منهجية
+                                التحول</a></li>
+                        <li><a href="#health-check" class="hover:text-white transition-colors"
+                                data-i18n="nav_health">فحص الصحة</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs" data-i18n="ft_col2">الخصوصية والشروط</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li><a href="privacy.html" class="hover:text-white transition-colors"
+                                data-i18n="ft_privacy">سياسة الخصوصية</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors" data-i18n="ft_terms">الشروط
+                                والأحكام</a></li>
+                        <li><a href="disclosures.html" class="hover:text-white transition-colors"
+                                data-i18n="ft_disc">الإفصاحات الرسمية</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs" data-i18n="ft_col3">تواصل معنا</h4>
+                    <div class="space-y-3 text-xs">
+                        <a href="tel:+963965304841" class="flex items-center gap-x-3 text-zinc-300 font-mono">
+                            <i class="fa-solid fa-phone text-[#ff2a70]"></i>
+                            <span dir="ltr">+963 965 304 841</span>
+                        </a>
+                        <a href="tel:+963932222841" class="flex items-center gap-x-3 text-zinc-300 font-mono">
+                            <i class="fa-solid fa-phone text-[#ff2a70]"></i>
+                            <span dir="ltr">+963 932 222 841</span>
+                        </a>
+                        <a href="mailto:hello@brandclinic-pro.com" class="flex items-center gap-x-3 text-zinc-300">
+                            <i class="fa-solid fa-envelope text-[#ff2a70]"></i>
+                            <span>hello@brandclinic-pro.com</span>
+                        </a>
+                        <div class="flex items-center gap-x-3 text-zinc-400">
+                            <i class="fa-solid fa-location-dot text-[#ff2a70]"></i>
+                            <span data-i18n="ft_loc">دمشق، سوريا • تغطية عالمية</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-500">
+                <p data-i18n="ft_copy">© 2026 Brand Clinic - Pro. جميع الحقوق محفوظة.</p>
+                <div class="flex gap-x-6">
+                    <a href="privacy.html" class="hover:text-white" data-i18n="ft_privacy">الخصوصية</a>
+                    <a href="terms.html" class="hover:text-white" data-i18n="ft_terms">الشروط</a>
+                    <a href="disclosures.html" class="hover:text-white" data-i18n="ft_disc">الإفصاحات</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 14. FORM MODAL -->
+    <div id="form-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="hideFormModal()"></div>
+        <div
+            class="relative w-full max-w-lg bg-[#0b0b0e] border border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-2xl text-right text-white">
+            <button onclick="hideFormModal()"
+                class="absolute top-4 left-4 w-9 h-9 flex items-center justify-center rounded-full bg-zinc-900 text-zinc-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div
+                    class="w-14 h-14 bg-[#ff2a70]/20 text-[#ff2a70] rounded-2xl flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-envelope-open-text text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-black text-white mb-1">طلب استشارة وفحص صحة العلامة</h3>
+                <p class="text-xs text-zinc-400">تعبئة نموذج التواصل وسيقوم فريق الخبراء بالتواصل معكم مباشرة</p>
+            </div>
+
+            <form onsubmit="submitForm(event)" class="space-y-4">
+                <input type="hidden" id="form-subject-input" name="subject" value="طلب استشارة جديد - Brand Clinic">
+
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">الاسم الكامل *</label>
+                    <input type="text" required
+                        class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-[#ff2a70] text-sm"
+                        placeholder="أدخل اسمك الكريم">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">رقم الهاتف / واتساب *</label>
+                    <input type="tel" required
+                        class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-[#ff2a70] text-sm font-mono"
+                        placeholder="+963 ...">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">اسم الشركة / العلامة التجارية</label>
+                    <input type="text"
+                        class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-[#ff2a70] text-sm"
+                        placeholder="اسم علامتك التجارية">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">تفاصيل وملاحظات الطلب</label>
+                    <textarea rows="3"
+                        class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-[#ff2a70] text-sm"
+                        placeholder="اشرح لنا أبعاد تحدي علامتك التجارية..."></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full py-4 bg-white text-black font-extrabold text-base rounded-full hover:bg-zinc-200 transition-all shadow-lg flex items-center justify-center gap-x-2 mt-2">
+                    <span>إرسال الطلب الآن</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 15. FLOATING WHATSAPP BUTTON -->
+    <button onclick="openWhatsApp()"
+        class="fixed bottom-6 right-6 z-[90] w-14 h-14 flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white rounded-full shadow-2xl transition-all hover:scale-110 active:scale-95"
+        title="تواصل عبر واتساب">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </button>
+
+    <!-- 16. SCRIPTS -->
+    <script>
+        let currentLang = 'ar';
+        let virtualIndex = 3;
+        let autoScrollTimer = null;
+
+        const translations = {
+            'top_brand': { ar: 'Brand Clinic هي الآن Pro', en: 'Brand Clinic is now Pro' },
+            'top_msg': { ar: 'كل المعلومات والبيانات محط اهتمام ونتعامل معها بسرية تامة وأمان مطلق.', en: 'All company information is treated with absolute confidentiality and security.' },
+            'top_link': { ar: 'اطلب الفحص ➔', en: 'Request Audit ➔' },
+            'nav_services': { ar: 'الخدمات الاستراتيجية', en: 'Creative Suite' },
+            'nav_cases': { ar: 'دراسات الحالة', en: 'Case Studies' },
+            'nav_health': { ar: 'فحص الصحة', en: 'Health Check' },
+            'nav_pricing': { ar: 'الإنتربرايز والأزمات', en: 'Enterprise' },
+            'nav_plans': { ar: 'الأسعار والباقات', en: 'Pricing' },
+            'nav_faq': { ar: 'الأسئلة الشائعة', en: 'FAQ' },
+            'hero_pill_badge': { ar: 'المنصة الأولى لتحويل العلامات التجارية', en: 'Ranked #1 Brand Transformation Platform' },
+            'hero_pill_link': { ar: 'اقرأ تقرير الأداء ➔', en: 'Read report ➔' },
+            'hero_title': { ar: 'المنصة الإبداعية لإخراج وتوجيه أفضل أعمال علامتك التجارية', en: 'The creative platform to direct your best brand work' },
+            'hero_subtitle': { ar: 'حلول استراتيجية متكاملة للتشخيص والعلاج الهيكلي. أطر عمل ذكية تضمن نمو وتألق العلامة التجارية على كافة المستويات.', en: 'Integrated strategic solutions for brand diagnosis and transformation. Intelligent frameworks ensuring brand growth at scale.' },
+            'btn_start_creating': { ar: 'ابدأ الفحص المجاني', en: 'Start free check' },
+            'btn_why_magnific': { ar: 'لماذا براند كلينك؟', en: 'Why Brand Clinic?' },
+
+            'sec2_title': { ar: 'صُنِع في براند كلينك', en: 'Created in Brand Clinic' },
+            'sec2_subtitle': { ar: 'من التشخيص الأول حتى التحول الشامل والإطلاق المستدام.', en: 'From initial diagnosis to complete transformation and launch.' },
+            'tab_all': { ar: 'الكل', en: 'All' },
+            'tab_identity': { ar: 'ضعف الهوية', en: 'Weak Identity' },
+            'tab_reputation': { ar: 'أزمات السمعة', en: 'Reputation Crisis' },
+            'tab_pricing': { ar: 'اضطراب التسعير', en: 'Pricing Disorder' },
+            'tab_sales': { ar: 'تراجع المبيعات', en: 'Sales Decline' },
+
+            'pg_ctrl_head': { ar: 'لوحة تحكم التشخيص', en: 'Diagnostic Controls' },
+            'pg_slider_label': { ar: 'مستوى التحول الاستراتيجية', en: 'Transformation Level' },
+            'pg_strategy_label': { ar: 'استراتيجية التموضع المختارة', en: 'Target Strategy Model' },
+            'pg_opt1': { ar: 'العلامات التجارية الفاخرة', en: 'Premium Luxury Leadership' },
+            'pg_opt2': { ar: 'التوسع السريع في السوق', en: 'Rapid Market Expansion' },
+            'pg_opt3': { ar: 'الإنقاذ واستعادة السمعة', en: 'Crisis Reputation Recovery' },
+            'pg_m1': { ar: 'ارتفاع القيمة الإدراكية:', en: 'Perceived Value Boost:' },
+            'pg_m2': { ar: 'نسبة ثقة العملاء:', en: 'Customer Trust Index:' },
+            'pg_apply_btn': { ar: 'طبق هذا التحول على علامتك', en: 'Apply to Your Brand' },
+            'pg_b_tag': { ar: 'قبل العلاج والتحول', en: 'Before Treatment' },
+            'pg_a_tag': { ar: 'بعد العلاج (براند كلينك)', en: 'After Brand Clinic' },
+            'pg_b_t': { ar: 'هوية مشتتة ورسائل غامضة', en: 'Fragmented Identity & Unclear Messaging' },
+            'pg_b_d': { ar: 'تراجع القيمة الإدراكية للعلامة، الاعتماد المتكرر على التخفيضات، وغياب نبرة صوت مميزة.', en: 'Decline in perceived value, heavy reliance on discounts, and lack of a distinctive tone of voice.' },
+            'pg_a_t': { ar: 'هوية فاخرة وتموضع رائد', en: 'Premium Identity & Market Leadership' },
+            'pg_a_d': { ar: 'نظام استراتيجي محكم، ثقة عميقة من العملاء، ونبرة صوت استثنائية تجذب الفئات الأكثر ربحية.', en: 'Robust strategic system, deep customer trust, and an exceptional tone attracting high-margin segments.' },
+
+            'sec3_title': { ar: 'تثق بنا كبرى العلامات', en: 'Made with the best brands' },
+            'sec3_subtitle': { ar: 'خبرات ومستشارون متخصصون عبر مختلف القطاعات الصناعية والإنتاجية.', en: 'Specialized consultants across diverse industrial and corporate sectors.' },
+            'ind_1': { ar: 'الخدمات المالية والبنوك', en: 'Financial Services & Banking' },
+            'ind_2': { ar: 'التجارة الإلكترونية والتجزئة', en: 'E-commerce & Retail' },
+            'ind_3': { ar: 'الرعاية الصحية والعافية', en: 'Healthcare & Wellness' },
+            'ind_4': { ar: 'العقارات والتطوير العمراني', en: 'Real Estate & Development' },
+            'ind_5': { ar: 'التكنولوجيا والبرمجيات', en: 'Tech & SaaS Solutions' },
+
+            'sec4_title': { ar: 'استراتيجية عظيمة.<br>نتائج مذهلة في السوق.', en: 'Great strategy.<br>Great when you search.' },
+            'sec4_subtitle': { ar: 'حلول استراتيجية متكاملة مصممة خصيصاً لتطوير علامتك التجارية في كل مرحلة.', en: 'Integrated strategic solutions tailored for your brand growth.' },
+            'svc1_title': { ar: 'إدارة الأزمات وحماية السمعة', en: 'Crisis & Reputation Management' },
+            'svc1_desc': { ar: 'نحمي ونستعيد سمعة علامتك التجارية عند ظهور التحديات المفاجئة، مع التعامل السريع والفعال مع الأزمات.', en: 'We protect and restore your brand reputation during challenges with rapid crisis containment.' },
+            'svc1_sub': { ar: 'استجابة فورية 24/7 للطوارئ', en: '24/7 Emergency Rapid Response' },
+            'svc2_title': { ar: 'هوية العلامة التجارية', en: 'Brand Identity Systems' },
+            'svc2_desc': { ar: 'ننشئ أنظمة هوية بصرية ولغوية مميزة تجسد استراتيجية علامتك وتضمن التماسك عبر جميع نقاط الاتصال.', en: 'Creating visual and verbal identity systems that align with your strategy across all touchpoints.' },
+            'svc3_title': { ar: 'استراتيجية التموضع', en: 'Market Positioning Strategy' },
+            'svc3_desc': { ar: 'نحدد الغرض الأساسي لعلامتك وموقعها التنافسي وميزتها الفريدة من خلال تخطيط استراتيجي دقيق.', en: 'Defining your brand purpose, competitive positioning, and unique advantage.' },
+            'svc_more': { ar: 'اعرف المزيد ➔', en: 'Learn more ➔' },
+            'svc4_title': { ar: 'فحص صحة العلامة التجارية', en: 'Brand Health Check' },
+            'svc4_desc': { ar: 'تقرير استراتيجي مفصل يستغرق 5-7 أيام عمل يحدد أسباب تراجع الأداء والفرص المتاحة للنمو.', en: 'In-depth 5-7 day diagnostic audit identifying growth bottlenecks and opportunities.' },
+            'svc4_btn': { ar: 'اطلب فحص الصحة لعلامتك الآن ➔', en: 'Request Brand Audit Now ➔' },
+
+            'sec5_title': { ar: 'علامتك التجارية تستحق دقتنا متناهية', en: 'Your brand deserves our precision' },
+            'sec5_subtitle': { ar: 'دراسات حالة وتحولات حقيقية نفذها فريق براند كلينك بنجاح.', en: 'Real case studies and brand transformations delivered by Brand Clinic.' },
+            'c1_b': { ar: '+240% نمو القيمة', en: '+240% Value Growth' },
+            'c1_t': { ar: 'تحول علامة تجارية فاخرة في قطاع التجزئة', en: 'Luxury Retail Brand Transformation' },
+            'c1_d': { ar: 'إعادة بناء التموضع والهوية البصرية لزيادة متوسط قيمة الطلب واستقطاب شريحة عملاء جديدة.', en: 'Repositioning and visual identity overhaul to boost average order value.' },
+            'c2_b': { ar: '98% نسبة رضا الثقة', en: '98% Trust Index' },
+            'c2_t': { ar: 'إعادة بناء سمعة مؤسسة مالية رائدة', en: 'Financial Institution Reputation Recovery' },
+            'c2_d': { ar: 'احتواء أزمة سمعة حادة عبر بروتوكولات استجابة سريعة وتغيير الصورة الذهنية بالكامل.', en: 'Containing a reputation crisis with rapid protocols and image restructuring.' },
+            'c3_b': { ar: '+400k وصول جديد', en: '+400k Audience Reach' },
+            'c3_t': { ar: 'استراتيجية التموضع لشركة برمجيات SaaS', en: 'SaaS Tech Brand Positioning' },
+            'c3_d': { ar: 'صياغة نبرة الصوت وهيكل الرسائل التسويقية لتحقيق التمدد السريع بالسوق الإقليمي.', en: 'Formulating tone of voice and messaging for rapid regional expansion.' },
+
+            'sec6_tag': { ar: 'أكثر مع براند كلينك', en: 'More with Brand Clinic' },
+            'sec6_quote': { ar: '"براند كلينك لم تغير فقط هوية شركتنا البصرية، بل غيرت طريقة رؤية السوق والعملاء لنا بالكامل. ارتفعت مبيعاتنا بنسبة 180% خلال 6 أشهر من إطلاق الاستراتيجية الجديدة."', en: '"Brand Clinic did not only revamp our visual identity; they completely transformed how the market perceives us. Sales jumped 180% within 6 months of launching the new strategy."' },
+            'sec6_author': { ar: 'د. أحمد العلي', en: 'Dr. Ahmed Al-Ali' },
+            'sec6_role': { ar: 'الرئيس التنفيذي - مجموعة العلي الاستثمارية', en: 'CEO - Al-Ali Investment Group' },
+
+            'sec7_tag': { ar: 'معيارك العالي للأعمال الإبداعية', en: 'Your standard for creative work' },
+            'sec7_title': { ar: 'فحص صحة العلامة التجارية', en: 'Brand Health Check Audit' },
+            'sec7_subtitle': { ar: 'هل تعمل علامتك التجارية بكامل إمكاناتها؟ فحص صحة العلامة منحك رؤية دقيقة وعميقة عن حالتها الحالية ويحدد بدقة أسباب تراجع الأداء.', en: 'Is your brand operating at full potential? Our audit gives a clear diagnostic breakdown of your current state.' },
+            'sec7_c1': { ar: 'اكتشاف شامل وتحليل للوضع الحالي', en: 'Comprehensive current-state discovery' },
+            'sec7_c2': { ar: 'تحليل تنافسي معمق بالسوق', en: 'Deep competitive market analysis' },
+            'sec7_c3': { ar: 'تقرير تشخيصي مفصل خلال 5-7 أيام', en: 'Detailed diagnostic report in 5-7 days' },
+            'sec7_notice': { ar: 'الاستشارة مأجورة. يتم تحديد موعد الاستشارة حسب رغبتكم (هاتفياً، مكالمة فيديو، أو حضور شخصي في مقر عملكم أو لدينا بالوكالة).', en: 'Consultation is paid. Appointment is held according to your preference (Phone, Video Call, or In-person).' },
+            'sec7_btn': { ar: 'اطلب فحص العلامة التجارية الآن ➔', en: 'Request Brand Audit Now ➔' },
+            'sec7_stat_lbl': { ar: 'مدة التقرير التنفيذي', en: 'Executive Report Timeline' },
+            'sec7_stat_unit': { ar: 'أيام عمل رسمية', en: 'Business Days' },
+            'sec7_s1': { ar: 'سرية البيانات:', en: 'Data Protection:' },
+            'sec7_s1_v': { ar: 'حماية مطلقة NDA', en: 'Strict NDA' },
+            'sec7_s2': { ar: 'التأثير المتوقع:', en: 'Expected Impact:' },
+            'sec7_s2_v': { ar: 'فوري وقابل للقياس', en: 'Immediate & Measurable' },
+
+            'sec8_title': { ar: 'اختر الباقة المناسبة لعلامتك', en: 'Find your plan' },
+            'sec8_subtitle': { ar: 'خطط استثمارية واضحة ومحددة تناسب مختلف مراحل نمو علامتك.', en: 'Clear, transparent investment plans for every growth stage.' },
+            'p1_tag': { ar: 'التشخيص الفوري', en: 'DIAGNOSTIC AUDIT' },
+            'p1_t': { ar: 'التشخيص الاستراتيجي', en: 'Strategic Diagnostic' },
+            'p1_u': { ar: '/ تقرير كامل', en: '/ full report' },
+            'p1_f1': { ar: 'فحص صحة العلامة خلال 5 أيام', en: '5-Day Brand Health Check' },
+            'p1_f2': { ar: 'تحليل تنافسي لـ 3 منافسين', en: 'Competitor Analysis (3 Brands)' },
+            'p1_f3': { ar: 'جلسة عرض ومناقشة ساعة عبر زوم', en: '1-Hour Executive Debrief Session' },
+            'p1_btn': { ar: 'احجز هذه الباقة ➔', en: 'Choose Plan ➔' },
+            'p2_badge': { ar: '⭐ الأكثر طلباً', en: '⭐ MOST POPULAR' },
+            'p2_tag': { ar: 'التحول الكامل', en: 'FULL TRANSFORMATION' },
+            'p2_t': { ar: 'باقة التحويل الشامل', en: 'Full Transformation' },
+            'p2_u': { ar: '/ مشروع متكامل', en: '/ full project' },
+            'p2_f1': { ar: 'تشخيص + إعادة تموضع استراتيجي', en: 'Diagnostic Audit + Strategic Repositioning' },
+            'p2_f2': { ar: 'كتالوج الهوية البصرية واللفظية', en: 'Visual & Verbal Identity Manual' },
+            'p2_f3': { ar: 'استراتيجية النبرة والرسائل التسويقية', en: 'Tone of Voice & Messaging Architecture' },
+            'p2_f4': { ar: 'متابعة تنفيذية لمدة 30 يوماً', en: '30 Days Execution Support' },
+            'p2_btn': { ar: 'احجز باقة التحويل الشامل ➔', en: 'Choose Full Transformation ➔' },
+            'p3_tag': { ar: 'للمؤسسات والأزمات', en: 'ENTERPRISE & CRISIS' },
+            'p3_t': { ar: 'الإنتربرايز والأزمات', en: 'Enterprise & Crisis' },
+            'p3_p': { ar: 'حسب الطلب', en: 'Custom Quote' },
+            'p3_f1': { ar: 'إدارة طوارئ الأزمات والسمعة 24/7', en: '24/7 Emergency Crisis Containment' },
+            'p3_f2': { ar: 'تدريب الإدارة العليا والتنفيذيين', en: 'Executive Leadership Training' },
+            'p3_f3': { ar: 'اتفاقية عدم إفصاح NDA سرية', en: 'Strict NDA Confidentiality Agreement' },
+            'p3_btn': { ar: 'تواصل لمعرفة التفاصيل ➔', en: 'Contact Enterprise Team ➔' },
+
+            'sec9_title': { ar: 'الأسئلة الشائعة', en: 'Frequently asked questions' },
+            'faq_q1': { ar: 'كيف تعقد الجلسات والاستشارات مع براند كلينك؟', en: 'How are consultations held with Brand Clinic?' },
+            'faq_a1': { ar: 'الاستشارات مأجورة ويتم تحديد موعدها حسب رغبتكم: هاتفياً، مكالمة فيديو، أو حضور شخصي بمقر عملكم أو الوكالة.', en: 'Consultations are paid and scheduled according to your preference: phone, video call, or in-person at your workplace or agency.' },
+            'faq_q2': { ar: 'كيف تضمن براند كلينك سرية بيانات شركتنا؟', en: 'How does Brand Clinic guarantee data confidentiality?' },
+            'faq_a2': { ar: 'كل المعلومات والبيانات المقدمة هي محط اهتمام مطلق ونتعامل معها بسرية تامة وتوقيع اتفاقية NDA رسمية.', en: 'All company information is handled with absolute confidentiality and covered by a binding Non-Disclosure Agreement (NDA).' },
+
+            'sec10_title': { ar: 'ابدأ مع براند كلينك', en: 'Try Brand Clinic' },
+            'sec10_subtitle': { ar: 'دعنا نبدأ رحلة التحول معاً. احجز استشارة مأجورة مع أحد خبرائنا اليوم.', en: 'Let’s start your transformation journey today. Book a paid consultation with our experts.' },
+            'sec10_b1': { ar: 'تواصل عبر واتساب', en: 'Chat on WhatsApp' },
+            'sec10_b2': { ar: 'طلب فحص واجتماع استشاري ➔', en: 'Request Brand Audit ➔' },
+
+            'ft_about': { ar: 'نساعد العلامات التجارية على الشفاء، النمو، والازدهار. استشارات استراتيجية احترافية تحول العلامات إلى قوى لا تُنسى.', en: 'We help brands heal, grow, and thrive with professional strategic consulting.' },
+            'ft_col1': { ar: 'الشركة', en: 'Company' },
+            'ft_col2': { ar: 'الخصوصية والشروط', en: 'Legal' },
+            'ft_col3': { ar: 'تواصل معنا', en: 'Contact Us' },
+            'ft_privacy': { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
+            'ft_terms': { ar: 'الشروط والأحكام', en: 'Terms & Conditions' },
+            'ft_disc': { ar: 'الإفصاحات الرسمية', en: 'Official Disclosures' },
+            'ft_loc': { ar: 'دمشق، سوريا • تغطية عالمية', en: 'Damascus, Syria • Global Reach' },
+            'ft_copy': { ar: '© 2026 Brand Clinic - Pro. جميع الحقوق محفوظة.', en: '© 2026 Brand Clinic - Pro. All Rights Reserved.' }
+        };
+
+        const heroItemsText = {
+            ar: [
+                "تصميم اللوحات والهيكلية",
+                "توسيع الحملات والتواجد",
+                "توليد الهويات الاستراتيجية",
+                "تشخيص وإعادة التموضع",
+                "بناء نماذج وسير العمل",
+                "رفع القيمة الإدراكية",
+                "توجيه وإطلاق العلامات"
+            ],
+            en: [
+                "Draft storyboards",
+                "Scale campaigns",
+                "Generate brand identities",
+                "Brand diagnosis & position",
+                "Build strategic workflows",
+                "Value perception upscaling",
+                "Direct brand launches"
+            ]
+        };
+
+        function buildHeroWheelTrack() {
+            const track = document.getElementById('hero-wheel-track');
+            if (!track) return;
+
+            const itemsArr = heroItemsText[currentLang] || heroItemsText['ar'];
+            let html = '';
+            for (let i = 0; i < 200; i++) {
+                const text = itemsArr[i % itemsArr.length];
+                html += `
+                    <div onclick="clickHeroItem(${i})" class="magnific-hero-item" data-index="${i}">
+                        <span>${text}</span>
+                        <span class="pink-arrow">▶</span>
+                    </div>
+                `;
+            }
+            track.innerHTML = html;
+            updateWheelPosition(false);
+        }
+
+        function updateWheelPosition(animate = true) {
+            const track = document.getElementById('hero-wheel-track');
+            if (!track) return;
+
+            const itemHeight = 52;
+            track.style.transition = animate ? 'transform 0.65s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
+            track.style.transform = `translateY(-${virtualIndex * itemHeight}px)`;
+
+            const items = track.querySelectorAll('.magnific-hero-item');
+            items.forEach((item, idx) => {
+                const dist = Math.abs(idx - virtualIndex);
+                if (idx === virtualIndex) {
+                    item.className = 'magnific-hero-item active';
+                    item.style.opacity = '1';
+                } else if (dist === 1) {
+                    item.className = 'magnific-hero-item';
+                    item.style.opacity = '0.6';
+                } else if (dist === 2) {
+                    item.className = 'magnific-hero-item';
+                    item.style.opacity = '0.35';
+                } else if (dist === 3) {
+                    item.className = 'magnific-hero-item';
+                    item.style.opacity = '0.18';
+                } else {
+                    item.className = 'magnific-hero-item';
+                    item.style.opacity = '0.05';
+                }
+            });
+        }
+
+        function clickHeroItem(idx) {
+            virtualIndex = idx;
+            updateWheelPosition(true);
+            resetAutoScroll();
+        }
+
+        function nextHeroItem() {
+            virtualIndex++;
+            updateWheelPosition(true);
+        }
+
+        function startAutoScroll() {
+            autoScrollTimer = setInterval(nextHeroItem, 2500);
+        }
+
+        function resetAutoScroll() {
+            if (autoScrollTimer) clearInterval(autoScrollTimer);
+            startAutoScroll();
+        }
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            const arBtn = document.getElementById('lang-ar');
+            const enBtn = document.getElementById('lang-en');
+
+            if (lang === 'ar') {
+                arBtn.className = 'px-3.5 py-1.5 rounded-full bg-white text-black shadow transition-all';
+                enBtn.className = 'px-3.5 py-1.5 rounded-full text-zinc-400 hover:text-white transition-all';
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = 'ar';
+            } else {
+                enBtn.className = 'px-3.5 py-1.5 rounded-full bg-white text-black shadow transition-all';
+                arBtn.className = 'px-3.5 py-1.5 rounded-full text-zinc-400 hover:text-white transition-all';
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = 'en';
+            }
+
+            // Update all translated elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[key] && translations[key][lang]) {
+                    el.innerHTML = translations[key][lang];
+                }
+            });
+
+            // Rebuild hero wheel for the chosen language
+            buildHeroWheelTrack();
+        }
+
+        // WhatsApp Integration
+        function openWhatsApp() {
+            const phone = "963932222841";
+            const msg = currentLang === 'ar'
+                ? "مرحباً، أريد الاستفسار عن خدمات براند كلينك لتحويل وحماية علامتي التجارية"
+                : "Hello, I want to inquire about Brand Clinic services";
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function openFormModal(subject = "طلب استشارة جديد") {
+            const modal = document.getElementById('form-modal');
+            document.getElementById('form-subject-input').value = subject;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function hideFormModal() {
+            const modal = document.getElementById('form-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        function startHealthCheck() {
+            openFormModal("طلب فحص صحة العلامة التجارية");
+        }
+
+        async function submitForm(e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const inputs = form.querySelectorAll('input[type="text"], input[type="tel"], textarea');
+            const name = inputs[0].value;
+            const phone = inputs[1].value;
+            const company = inputs[2].value || 'غير محدد';
+            const details = inputs[3].value || 'لا يوجد ملاحظات إضافية';
+            const subject = document.getElementById('form-subject-input').value;
+
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري الإرسال...';
+            submitBtn.disabled = true;
+
+            try {
+                await fetch("https://formsubmit.co/ajax/purpleartagency556@gmail.com", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "الاسم": name,
+                        "رقم التواصل": phone,
+                        "الشركة": company,
+                        "تفاصيل الطلب": details,
+                        _subject: subject,
+                        _template: "table"
+                    })
+                });
+
+                form.parentElement.innerHTML = `
+                    <div class="text-center py-8">
+                        <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-circle-check text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-2">${currentLang === 'ar' ? 'تم استلام طلبكم بنجاح!' : 'Request Received Successfully!'}</h3>
+                        <p class="text-xs text-zinc-400 mb-6">${currentLang === 'ar' ? 'شكراً لك، سيتواصل معك أحد استشاريينا في أقرب وقت.' : 'Thank you, our team will reach out shortly.'}</p>
+                        <button onclick="hideFormModal()" class="px-6 py-2.5 bg-zinc-800 text-white rounded-full text-xs font-bold">${currentLang === 'ar' ? 'إغلاق' : 'Close'}</button>
+                    </div>
+                `;
+            } catch (err) {
+                alert(currentLang === 'ar' ? "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى." : "Error submitting form. Please try again.");
+                submitBtn.disabled = false;
+            }
+        }
+
+        function toggleFaq(btn) {
+            const ans = btn.nextElementSibling;
+            const icon = btn.querySelector('.fa-plus, .fa-minus');
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                if (icon) { icon.classList.remove('fa-plus'); icon.classList.add('fa-minus'); }
+            } else {
+                ans.classList.add('hidden');
+                if (icon) { icon.classList.remove('fa-minus'); icon.classList.add('fa-plus'); }
+            }
+        }
+
+        const playgroundData = {
+            all: {
+                ar: {
+                    bTitle: 'هوية مشتتة ورسائل غامضة',
+                    bDesc: 'تراجع القيمة الإدراكية للعلامة، الاعتماد المتكرر على التخفيضات، وغياب نبرة صوت مميزة.',
+                    aTitle: 'هوية فاخرة وتموضع رائد',
+                    aDesc: 'نظام استراتيجي محكم، ثقة عميقة من العملاء، ونبرة صوت استثنائية تجذب الفئات الأكثر ربحية.',
+                    metric: '+340%',
+                    trust: '98.4%'
+                },
+                en: {
+                    bTitle: 'Fragmented Identity & Unclear Messaging',
+                    bDesc: 'Decline in perceived value, heavy reliance on discounts, and lack of a distinctive tone of voice.',
+                    aTitle: 'Premium Identity & Market Leadership',
+                    aDesc: 'Robust strategic system, deep customer trust, and an exceptional tone attracting high-margin segments.',
+                    metric: '+340%',
+                    trust: '98.4%'
+                }
+            },
+            identity: {
+                ar: {
+                    bTitle: 'ضعف الهوية البصرية واللفظية',
+                    bDesc: 'تصميم غير متناسق عبر فروع الشركة مع عدم وضوح الرسالة التسويقية الأساسية للجمهور.',
+                    aTitle: 'كتالوج هوية بصرية ولغوية فاخر',
+                    aDesc: 'دليل شامل يضبط الهوية البصرية ونبرة الصوت والرسائل عبر كل نقطة اتصال مع العميل.',
+                    metric: '+410%',
+                    trust: '99.0%'
+                },
+                en: {
+                    bTitle: 'Visual & Verbal Identity Weakness',
+                    bDesc: 'Inconsistent branding across touchpoints and ambiguous core marketing messages.',
+                    aTitle: 'Luxury Visual & Verbal Brand Book',
+                    aDesc: 'Comprehensive design system establishing tone of voice, typography, and brand assets.',
+                    metric: '+410%',
+                    trust: '99.0%'
+                }
+            },
+            reputation: {
+                ar: {
+                    bTitle: 'أزمات السمعة وهجمات المنافسين',
+                    bDesc: 'تراجع ثقة العملاء نتيجة أزمات علاقات عامة غير محتواة وغياب بروتوكول الاستجابة.',
+                    aTitle: 'حماية السمعة واستعادة الثقة',
+                    aDesc: 'بروتوكول احتواء سريع خلال 24 ساعة مع صياغة رسائل استراتيجية تعيد الصورة الذهنية الإيجابية.',
+                    metric: '+290%',
+                    trust: '99.5%'
+                },
+                en: {
+                    bTitle: 'Reputation Crisis & PR Backlash',
+                    bDesc: 'Declining consumer confidence due to uncontained PR incidents and lack of response protocol.',
+                    aTitle: 'Rapid Crisis Containment & Trust Recovery',
+                    aDesc: '24-hour rapid containment protocol with strategic messaging restoring full brand goodwill.',
+                    metric: '+290%',
+                    trust: '99.5%'
+                }
+            },
+            pricing: {
+                ar: {
+                    bTitle: 'اضطراب التسعير وحرب الأسعار',
+                    bDesc: 'اضطرار الشركة للتنافس في التخفيضات العشوائية وانخفاض هامش الربح الإجمالي.',
+                    aTitle: 'تموضع فاخر يرفع هامش الربح',
+                    aDesc: 'إعادة تموضع استراتيجي يرفع القيمة المدركة ويسمح بالتسعير الفاخر دون خسارة العملاء.',
+                    metric: '+380%',
+                    trust: '97.8%'
+                },
+                en: {
+                    bTitle: 'Pricing Disorder & Price Wars',
+                    bDesc: 'Forced competition in discount wars leading to severely eroded profit margins.',
+                    aTitle: 'Luxury Repositioning & Margin Expansion',
+                    aDesc: 'Strategic repositioning boosting perceived value and enabling premium pricing power.',
+                    metric: '+380%',
+                    trust: '97.8%'
+                }
+            },
+            sales: {
+                ar: {
+                    bTitle: 'تراجع المبيعات وتجمد النمو',
+                    bDesc: 'فقدان الحصة السوقية لصالح المنافسين الجدد وصعوبة جذب شرائح عملاء جديدة.',
+                    aTitle: 'استراتيجية توسع ونمو متسارع',
+                    aDesc: 'إعادة إطلاق قنوات التواجد وصياغة استراتيجية تموضع هجومية تحقق نمواً مضاعفاً.',
+                    metric: '+450%',
+                    trust: '98.9%'
+                },
+                en: {
+                    bTitle: 'Sales Stagnation & Market Share Loss',
+                    bDesc: 'Loss of market share to new entrants and difficulty attracting high-value leads.',
+                    aTitle: 'Aggressive Market Expansion Strategy',
+                    aDesc: 'Revamped omnichannel launch strategy driving multi-fold revenue growth.',
+                    metric: '+450%',
+                    trust: '98.9%'
+                }
+            }
+        };
+
+        function filterPlayground(tab) {
+            document.querySelectorAll('.pg-tab').forEach(t => {
+                if (t.getAttribute('data-tab') === tab) {
+                    t.className = 'pg-tab px-6 py-2.5 rounded-full bg-black text-white font-bold text-sm transition-all shadow-md';
+                } else {
+                    t.className = 'pg-tab px-6 py-2.5 rounded-full bg-white text-zinc-700 hover:text-black font-semibold text-sm border border-[#e5decb] transition-all';
+                }
+            });
+
+            const data = (playgroundData[tab] || playgroundData.all)[currentLang] || playgroundData.all['ar'];
+
+            const bTitle = document.getElementById('pg-b-title');
+            const bDesc = document.getElementById('pg-b-desc');
+            const aTitle = document.getElementById('pg-a-title');
+            const aDesc = document.getElementById('pg-a-desc');
+            const metricVal = document.getElementById('pg-metric-value');
+            const metricTrust = document.getElementById('pg-metric-trust');
+
+            if (bTitle) bTitle.innerText = data.bTitle;
+            if (bDesc) bDesc.innerText = data.bDesc;
+            if (aTitle) aTitle.innerText = data.aTitle;
+            if (aDesc) aDesc.innerText = data.aDesc;
+            if (metricVal) metricVal.innerText = data.metric;
+            if (metricTrust) metricTrust.innerText = data.trust;
+        }
+
+        function onPlaygroundSlider(val) {
+            document.getElementById('pg-slider-val').innerText = val + '%';
+            const metricVal = document.getElementById('pg-metric-value');
+            if (metricVal) {
+                const calculated = Math.round(val * 3.8);
+                metricVal.innerText = '+' + calculated + '%';
+            }
+        }
+
+        function onStrategyChange(type) {
+            const val = document.getElementById('pg-slider').value || 95;
+            onPlaygroundSlider(val);
+        }
+
+        function toggleMobileMenu() {
+            const existing = document.getElementById('mobile-menu');
+            if (existing) { existing.remove(); return; }
+            const menu = document.createElement('div');
+            menu.id = 'mobile-menu';
+            menu.className = 'fixed inset-0 z-[99] bg-[#0b0b0e] text-white p-6 flex flex-col text-right';
+            menu.innerHTML = `
+                <div class="flex items-center justify-between pb-6 border-b border-zinc-800">
+                    <span class="font-black text-xl">Brand Clinic</span>
+                    <button onclick="toggleMobileMenu()" class="text-2xl text-zinc-400">×</button>
+                </div>
+                <div class="flex flex-col gap-y-4 py-8 text-base font-bold">
+                    <a href="#hero" onclick="toggleMobileMenu()" data-i18n="nav_services">الخدمات الاستراتيجية</a>
+                    <a href="#playground" onclick="toggleMobileMenu()" data-i18n="nav_cases">دراسات الحالة</a>
+                    <a href="#health-check" onclick="toggleMobileMenu()" data-i18n="nav_health">فحص الصحة</a>
+                    <a href="#pricing" onclick="toggleMobileMenu()" data-i18n="nav_plans">الأسعار</a>
+                </div>
+            `;
+            document.body.appendChild(menu);
+        }
+
+        window.onload = function () {
+            buildHeroWheelTrack();
+            startAutoScroll();
+        };
+    </script>
+</body>
+
+</html>
