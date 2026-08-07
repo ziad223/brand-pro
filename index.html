@@ -233,7 +233,7 @@
 
     <!-- 1. TOP ANNOUNCEMENT BANNER -->
     <div
-        class="bg-[#0b0b0e] text-white text-xs py-2.5 px-6 text-center border-b border-white/10 flex items-center justify-center gap-x-2 relative z-50">
+        class="hidden md:flex bg-[#0b0b0e] text-white text-xs py-2.5 px-6 text-center border-b border-white/10 items-center justify-center gap-x-2 relative z-50">
         <span class="text-[#ff2a70] font-bold" data-i18n="top_brand">Brand Clinic هي الآن Pro</span>
         <span class="text-zinc-600">|</span>
         <span class="text-zinc-300 font-medium" data-i18n="top_msg">كل المعلومات والبيانات محط اهتمام ونتعامل معها بسرية
@@ -243,13 +243,13 @@
     </div>
 
     <!-- 2. TRANSPARENT NAVBAR -->
-    <nav class="absolute top-10 left-0 right-0 z-50 bg-transparent py-4">
-        <div class="max-w-[1650px] mx-auto px-6 lg:px-12 flex items-center justify-between">
+    <nav class="absolute top-2 md:top-10 left-0 right-0 z-50 bg-transparent py-3 lg:py-4">
+        <div class="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-x-2">
 
             <!-- Left: Logo -->
-            <a href="index.html" class="flex items-center gap-x-3 group">
-                <img id="nav-logo" src="logo-white.png" alt="Brand Clinic" class="h-10 w-auto object-contain">
-                <span class="text-white text-2xl font-black tracking-tight" id="nav-brand-name">Brand Clinic</span>
+            <a href="index.html" class="flex items-center gap-x-2 sm:gap-x-3 group min-w-0 max-w-[55%] sm:max-w-none">
+                <img id="nav-logo" src="logo-white.png" alt="Brand Clinic" class="h-7 sm:h-10 w-auto object-contain flex-shrink-0">
+                <span class="text-white text-base sm:text-2xl font-black tracking-tight truncate" id="nav-brand-name">Brand Clinic</span>
             </a>
 
             <!-- Center: Navigation Links -->
@@ -265,20 +265,20 @@
             </div>
 
             <!-- Right: Language Switcher & Mobile Menu Button -->
-            <div class="flex items-center gap-x-4">
+            <div class="flex items-center gap-x-2 sm:gap-x-4 flex-shrink-0">
                 <!-- Language Switcher -->
                 <div
-                    class="flex items-center bg-zinc-900/80 backdrop-blur-md rounded-full p-1 border border-white/10 text-xs font-bold">
+                    class="flex items-center bg-zinc-900/80 backdrop-blur-md rounded-full p-0.5 sm:p-1 border border-white/10 text-[11px] sm:text-xs font-bold">
                     <button onclick="switchLanguage('ar')" id="lang-ar"
-                        class="px-3.5 py-1.5 rounded-full bg-white text-black shadow transition-all">عربي</button>
+                        class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white text-black shadow transition-all">عربي</button>
                     <button onclick="switchLanguage('en')" id="lang-en"
-                        class="px-3.5 py-1.5 rounded-full text-zinc-400 hover:text-white transition-all">EN</button>
+                        class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-zinc-400 hover:text-white transition-all">EN</button>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <button onclick="toggleMobileMenu()"
-                    class="lg:hidden p-2.5 rounded-full bg-zinc-900/80 text-zinc-200 border border-white/10">
-                    <i class="fa-solid fa-bars text-lg"></i>
+                    class="lg:hidden p-2 sm:p-2.5 rounded-full bg-zinc-900/80 text-zinc-200 border border-white/10 hover:bg-zinc-800 transition-colors" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-base sm:text-lg"></i>
                 </button>
             </div>
 
@@ -295,9 +295,9 @@
                 <div class="lg:col-span-7 ltr:text-left rtl:text-right text-start">
                     <!-- Pill Badge -->
                     <div
-                        class="inline-flex items-center gap-x-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold mb-6 text-zinc-200">
+                        class="inline-flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-start gap-1.5 sm:gap-x-2 px-3 sm:px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] sm:text-xs font-semibold mb-6 text-zinc-200 max-w-full">
                         <span data-i18n="hero_pill_badge">المنصة الأولى لتحويل العلامات التجارية</span>
-                        <a href="#health-check" class="text-[#ff2a70] font-bold hover:underline"
+                        <a href="#health-check" class="text-[#ff2a70] font-bold hover:underline whitespace-nowrap"
                             data-i18n="hero_pill_link">اقرأ تقرير الأداء ➔</a>
                     </div>
 
@@ -1114,7 +1114,7 @@
             'nav_faq': { ar: 'الأسئلة الشائعة', en: 'FAQ' },
             'hero_pill_badge': { ar: 'المنصة الأولى لتحويل العلامات التجارية', en: 'Ranked #1 Brand Transformation Platform' },
             'hero_pill_link': { ar: 'اقرأ تقرير الأداء ➔', en: 'Read report ➔' },
-            'hero_title': { ar: 'المنصة الإبداعية لإخراج وتوجيه أفضل أعمال علامتك التجارية', en: 'The creative platform to direct your best brand work' },
+            'hero_title': { ar: 'المنصة الإبداعية لإخراج وتوجيه أفضل أعمال علامتك التجارية', en: 'The creative platform to direct<br>your best brand work' },
             'hero_subtitle': { ar: 'حلول استراتيجية متكاملة للتشخيص والعلاج الهيكلي. أطر عمل ذكية تضمن نمو وتألق العلامة التجارية على كافة المستويات.', en: 'Integrated strategic solutions for brand diagnosis and transformation. Intelligent frameworks ensuring brand growth at scale.' },
             'btn_start_creating': { ar: 'ابدأ الفحص المجاني', en: 'Start free check' },
             'btn_why_magnific': { ar: 'لماذا براند كلينك؟', en: 'Why Brand Clinic?' },
@@ -1584,20 +1584,56 @@
 
         function toggleMobileMenu() {
             const existing = document.getElementById('mobile-menu');
-            if (existing) { existing.remove(); return; }
+            if (existing) {
+                existing.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => existing.remove(), 200);
+                return;
+            }
             const menu = document.createElement('div');
             menu.id = 'mobile-menu';
-            menu.className = 'fixed inset-0 z-[99] bg-[#0b0b0e] text-white p-6 flex flex-col text-right';
+            menu.className = 'fixed inset-0 z-[100] bg-[#0b0b0e]/95 backdrop-blur-xl text-white p-5 flex flex-col transition-all duration-200 opacity-100';
+            
+            const isAr = currentLang === 'ar';
             menu.innerHTML = `
-                <div class="flex items-center justify-between pb-6 border-b border-zinc-800">
-                    <span class="font-black text-xl">Brand Clinic</span>
-                    <button onclick="toggleMobileMenu()" class="text-2xl text-zinc-400">×</button>
+                <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                    <a href="index.html" class="flex items-center gap-x-2">
+                        <img src="logo-white.png" alt="Brand Clinic" class="h-7 w-auto object-contain">
+                        <span class="font-black text-lg text-white">Brand Clinic</span>
+                    </a>
+                    <button onclick="toggleMobileMenu()" class="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-800/80 text-zinc-300 hover:text-white border border-white/10 text-xl transition-colors">✕</button>
                 </div>
-                <div class="flex flex-col gap-y-4 py-8 text-base font-bold">
-                    <a href="#hero" onclick="toggleMobileMenu()" data-i18n="nav_services">الخدمات الاستراتيجية</a>
-                    <a href="#playground" onclick="toggleMobileMenu()" data-i18n="nav_cases">دراسات الحالة</a>
-                    <a href="#health-check" onclick="toggleMobileMenu()" data-i18n="nav_health">فحص الصحة</a>
-                    <a href="#pricing" onclick="toggleMobileMenu()" data-i18n="nav_plans">الأسعار</a>
+                
+                <div class="flex flex-col gap-y-1.5 py-6 text-sm font-bold overflow-y-auto flex-1">
+                    <a href="#services" onclick="toggleMobileMenu()" class="py-3 px-3.5 rounded-xl hover:bg-white/10 transition-colors flex items-center justify-between" data-i18n="nav_services">
+                        <span>${isAr ? 'الخدمات الاستراتيجية' : 'Strategic Services'}</span>
+                        <span class="text-zinc-500 text-xs">➔</span>
+                    </a>
+                    <a href="#playground" onclick="toggleMobileMenu()" class="py-3 px-3.5 rounded-xl hover:bg-white/10 transition-colors flex items-center justify-between" data-i18n="nav_cases">
+                        <span>${isAr ? 'دراسات الحالة' : 'Case Studies'}</span>
+                        <span class="text-zinc-500 text-xs">➔</span>
+                    </a>
+                    <a href="#health-check" onclick="toggleMobileMenu()" class="py-3 px-3.5 rounded-xl hover:bg-white/10 transition-colors flex items-center justify-between" data-i18n="nav_health">
+                        <span>${isAr ? 'فحص الصحة' : 'Health Check'}</span>
+                        <span class="text-zinc-500 text-xs">➔</span>
+                    </a>
+                    <a href="#pricing" onclick="toggleMobileMenu()" class="py-3 px-3.5 rounded-xl hover:bg-white/10 transition-colors flex items-center justify-between" data-i18n="nav_pricing">
+                        <span>${isAr ? 'الإنتربرايز والأزمات' : 'Enterprise & Crisis'}</span>
+                        <span class="text-zinc-500 text-xs">➔</span>
+                    </a>
+                    <a href="#pricing" onclick="toggleMobileMenu()" class="py-3 px-3.5 rounded-xl hover:bg-white/10 transition-colors flex items-center justify-between" data-i18n="nav_plans">
+                        <span>${isAr ? 'الأسعار والباقات' : 'Pricing & Plans'}</span>
+                        <span class="text-zinc-500 text-xs">➔</span>
+                    </a>
+                    <a href="#faq" onclick="toggleMobileMenu()" class="py-3 px-3.5 rounded-xl hover:bg-white/10 transition-colors flex items-center justify-between" data-i18n="nav_faq">
+                        <span>${isAr ? 'الأسئلة الشائعة' : 'FAQ'}</span>
+                        <span class="text-zinc-500 text-xs">➔</span>
+                    </a>
+                </div>
+
+                <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
+                    <button onclick="toggleMobileMenu(); startHealthCheck();" class="w-full py-3 rounded-full bg-[#ff2a70] text-white font-bold text-sm shadow-lg shadow-[#ff2a70]/20 active:scale-[0.98] transition-all text-center">
+                        ${isAr ? 'ابدأ الفحص المجاني' : 'Start Free Checkup'}
+                    </button>
                 </div>
             `;
             document.body.appendChild(menu);
